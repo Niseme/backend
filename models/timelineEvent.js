@@ -4,7 +4,6 @@ const TimelineSchema = new mongoose.Schema (
     {
         name: {
             type: String,
-            required: true
         },
         event: {
             type: String,
@@ -20,15 +19,12 @@ const TimelineSchema = new mongoose.Schema (
         },
         both: {
             type: Boolean,
-            required: true
         },
         image: {
             type: String,
-            required: true
         },
         more: {
-            type: String,
-            required: true
+            type: String
         },
         notes: {
             type: String,
