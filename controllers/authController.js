@@ -1,13 +1,13 @@
-import userModal from "../modals/user.js"
+import userModel from "../models/user.js"
 
 export const postRegistration = async(req,res) => {
     const {userName,email,password} = req.body;
-    const existing = await userModal.findOne({email:email});
+    const existing = await userModel.findOne({email:email});
     console.log(existing)
     if(existing){
         return res.status(403).json({message:"User already exist"});
     }
-    const newUser = new userModal({userName,email,password});
+    const newUser = new userModel({userName,email,password});
     const data = await newUser.save();
 
     res.send(data);
@@ -15,7 +15,7 @@ export const postRegistration = async(req,res) => {
 
 export const postLogin = async(req,res) => {
     const {email,password} = req.body;
-    const existing = await userModal.findOne({email:email,password:password});
+    const existing = await userModel.findOne({email:email,password:password});
     console.log(existing)
     if(existing){
         return res.status(200).json(existing);
