@@ -7,7 +7,7 @@ import cors from "cors";
 const app = express();
 
 app.use(cors())
-app.use(express.json());
+app.use(express.json({limit: '5MB'}));
 app.use("/auth", Authrouter)
 app.use("/events", timelineRouter)
 
