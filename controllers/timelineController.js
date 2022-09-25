@@ -6,9 +6,7 @@ export const getAllEvents = async (req, res) => {
         res.status(201).json(allEvents)
     } catch (error) {
         res.status(404).send(error)
-        console.error(error)
-    } 
-}
+    }}
 
 export const createEvent = async (req,res)=> {
     try {
@@ -17,9 +15,7 @@ export const createEvent = async (req,res)=> {
         res.status(201).send(`New event ${newEvent.event} has been created`)
     } catch (error) {
         res.status(404).send(error)
-        console.error(error)
-}
-}
+}}
 
 export const findEventById =  async(req, res)=> {
     try {
@@ -28,8 +24,7 @@ export const findEventById =  async(req, res)=> {
     } catch (error) {
           res.status(405).send(error);
           console.error(error)
-    }
-  }
+    }}
 
 export const updateEvent = async (req,res)=> {
     try {
@@ -38,5 +33,4 @@ export const updateEvent = async (req,res)=> {
     } catch (error) {
         res.status(405).send(error);
         console.error(error)
-    }
-}
+    }}
